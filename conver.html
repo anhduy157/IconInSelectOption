@@ -8,7 +8,9 @@
 </head>
 <input type="text" id="texts">
 <button type="button" onclick="conver()">Convert</button>
-<p id="textConvert"></p>
+<hr />
+<input type="text" id="textConvert"></input>
+<button onclick="myFunction()">Sao Chép</button>
 
 <body>
 
@@ -70,7 +72,19 @@
     function conver() {
         var txt = document.getElementById("texts").value;
         var txtconvert = document.getElementById("textConvert");
-        txtconvert.innerHTML = GetCode(txt);
+        txtconvert.value = GetCode(txt);
+    }
+    function myFunction() {
+        /* Lấy nội dung từ ô input */
+        var noi_dung_sao_chep = document.getElementById("texts");
+
+        /* Chọn nội dung có trong ô input */
+        noi_dung_sao_chep.select();
+        noi_dung_sao_chep.setSelectionRange(0, 99999); /*cho thiết bị điện thoại*/
+
+        /* thực hiện copy nội dung */
+        document.execCommand("copy");
+
     }
 </script>
 
