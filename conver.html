@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<input type="text" id="texts">
+<textarea type="text" id="texts" style=" width:500px;height:300px"></textarea>
 <button type="button" onclick="conver()">Convert</button>
 <hr />
-<input type="text" id="textConvert"></input>
+<textarea type="text" id="textConvert" style=" width:500px;height:300px"></textarea>
 <button onclick="myFunction()">Sao Chép</button>
 
 <body>
@@ -72,7 +72,7 @@
     function conver() {
         var txt = document.getElementById("texts").value;
         var txtconvert = document.getElementById("textConvert");
-        txtconvert.value = GetCode(txt);
+        txtconvert.value = GetCode(txt).toUpperCase();
     }
     //coppy
     function myFunction() {
